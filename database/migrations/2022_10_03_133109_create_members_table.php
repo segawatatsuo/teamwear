@@ -19,10 +19,10 @@ class CreateMembersTable extends Migration
 
             $table->integer('cart_id');
             $table->integer('user_id');
-            $table->integer('member_no');
+            $table->integer('member_no')->comment('会員番号');
             $table->string('status');
             $table->integer('point');
-            $table->dateTime('join_date');
+            $table->dateTime('join_date')->comment('登録日');
             $table->string('email');
             $table->string('name1');
             $table->string('name2');

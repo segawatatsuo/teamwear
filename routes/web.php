@@ -38,3 +38,8 @@ Route::post('password/admin/reset', 'Auth\AdminResetPasswordController@reset')->
 
 Route::get('users/test/','TestController@index')->name('index');
 Route::get('admins/test/','AdminController@index')->name('index');
+
+
+Route::get('adminlte', function () {
+    return view('adminlte');
+});
