@@ -14,7 +14,8 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    //'title' => 'AdminLTE 3',
+    'title' => 'uniform lab',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -35,25 +36,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Google Fonts
-    |--------------------------------------------------------------------------
-    |
-    | Here you can allow or not the use of external google fonts. Disabling the
-    | google fonts may be useful if your admin panel internet access is
-    | restricted somehow.
-    |
-    | For detailed instructions you can look the google fonts section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
-    */
-
-    'google_fonts' => [
-        'allowed' => true,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Admin Panel Logo
+    | Logo
     |--------------------------------------------------------------------------
     |
     | Here you can change the logo of your admin panel.
@@ -63,59 +46,13 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    //'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>uniform lab</b>',
+    'logo_img' => '/vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Logo
-    |--------------------------------------------------------------------------
-    |
-    | Here you can setup an alternative logo to use on your login and register
-    | screens. When disabled, the admin panel logo will be used instead.
-    |
-    | For detailed instructions you can look the auth logo section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
-    */
-
-    'auth_logo' => [
-        'enabled' => false,
-        'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'Auth Logo',
-            'class' => '',
-            'width' => 50,
-            'height' => 50,
-        ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Preloader Animation
-    |--------------------------------------------------------------------------
-    |
-    | Here you can change the preloader animation configuration.
-    |
-    | For detailed instructions you can look the preloader section here:
-    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
-    |
-    */
-
-    'preloader' => [
-        'enabled' => true,
-        'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
-            'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
-        ],
-    ],
+    'logo_img_alt' => 'uniform lab',
 
     /*
     |--------------------------------------------------------------------------
@@ -302,6 +239,7 @@ return [
         ],
 
         // Sidebar items:
+        /*
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
@@ -311,24 +249,29 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        */
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            //'text'        => 'pages',
+            //'text'        => '見積もり書',
+            //'url'         => 'quotations',
+            //'icon_color'        => 'cyan',
+            //'label'       => 4,
+            //'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
+        //['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            //'text' => 'profile',
+            //'text' => 'インボイス',
+            //'url'  => 'invoices',
+            //'icon_color' => 'cyan',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            //'text' => 'change_password',
+            'text' => '受注情報',
+            'url'  => 'orders',
+            'icon_color' => 'cyan',
         ],
+        /*
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -367,22 +310,143 @@ return [
                 ],
             ],
         ],
+        */
+        /*
         ['header' => 'labels'],
+        */
+
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            //'text'       => 'important',
+            //'text'       => '入金',
+            //'icon_color' => 'cyan',
+            //'url'        => 'payments',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            //'text'       => 'warning',
+            //'text'       => '売上',
+            //'icon_color' => 'cyan',
+            //'url'        => 'sales',
         ],
         [
-            'text'       => 'information',
+            //'text'       => 'information',
+            //'text'       => '納期',
+            //'icon_color' => 'cyan',
+            //'url'        => 'deadlines',
+        ],
+
+        [
+            //'text'       => 'information',
+            //'text'       => '在庫',
+            //'icon_color' => 'cyan',
+            //'url'        => 'stocks',
+        ],
+
+        [
+            //'text'       => 'information',
+            'text'       => '商品マスター',
+            'icon_color' => 'cyan',
+            'url'        => 'products',
+        ],
+
+
+
+        [
+            //'text'       => 'information',
+            'text'       => '顧客マスター',
+            'icon_color' => 'cyan',
+            'url'        => 'customers',
+        ],
+
+
+
+        [
+            //'text'       => 'information',
+            'text'       => '会社情報',
+            'icon_color' => 'cyan',
+            'url'        => 'companies',
+        ],
+
+
+        [
+            //'text'       => 'information',
+            //'text'       => 'PDF',
+            //'icon_color' => 'cyan',
+            //'url'        => 'others',
+        ],
+
+        [
+            //'text'       => 'information',
+            //'text'       => '数量制限',
+            //'icon_color' => 'cyan',
+            //'url'        => 'limit',
+        ],
+
+        [
+            //'text'       => 'information',
+            'text'       => 'Mail',
+            'icon_color' => 'cyan',
+            'url'        => 'mails',
+        ],
+        [
+            //'text'       => 'information',
+            //'text'       => '有効期間',
+            //'icon_color' => 'cyan',
+            //'url'        => 'expiry',
+        ],
+
+        [
+            //'text'       => 'information',
+            'text'       => 'カテゴリー',
+            'icon_color' => 'cyan',
+            'submenu'        => [
+                [
+                    'text' => 'メーカー',
+                    'url'  => 'makers',
+                ],
+                [
+                    'text' => '競技種別',
+                    'url'  => 'categories',
+                ],
+                [
+                    'text' => '商品分類',
+                    'url'  => 'classifications',
+                ],
+                [
+                    'text' => '対象年齢',
+                    'url'  => 'ages',
+                ],
+                [
+                    'text' => '性別',
+                    'url'  => 'genders',
+                ],
+
+
+
+            ]
+        ],
+
+        [
+            //'text'       => 'information',
+            'text'       => 'プルダウン',
+            'icon_color' => 'cyan',
+            'url'        => 'pulldowns',
+        ],
+
+        [
+            //'text'       => 'information',
+            'text'       => 'フォント画像',
             'icon_color' => 'cyan',
             'url'        => '#',
         ],
+
+        [
+            //'text'       => 'information',
+            'text'       => '基本設定',
+            'icon_color' => 'cyan',
+            'url'        => 'initials',
+        ],
+
+
     ],
 
     /*

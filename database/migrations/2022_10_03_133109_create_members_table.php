@@ -17,27 +17,27 @@ class CreateMembersTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
 
-            $table->integer('cart_id');
-            $table->integer('user_id');
+            $table->integer('cart_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->integer('member_no')->comment('会員番号');
-            $table->string('status');
-            $table->integer('point');
+            $table->string('status')->nullable();
+            $table->integer('point')->nullable();
             $table->dateTime('join_date')->comment('登録日');
-            $table->string('email');
-            $table->string('name1');
-            $table->string('name2');
-            $table->string('name3');
-            $table->string('name4');
+            $table->string('email')->nullable();
+            $table->string('name1')->nullable();
+            $table->string('name2')->nullable();
+            $table->string('name3')->nullable();
+            $table->string('name4')->nullable();
 
-            $table->string('zipcode');
-            $table->string('country');
-            $table->string('pref');
-            $table->string('address1');
-            $table->string('address2');
-            $table->string('address3');
+            $table->string('zipcode')->nullable();
+            $table->string('country')->nullable();
+            $table->string('pref')->nullable();
+            $table->string('address1')->nullable();
+            $table->string('address2')->nullable();
+            $table->string('address3')->nullable();
 
-            $table->string('tel');
-            $table->string('fax');
+            $table->string('tel')->nullable();
+            $table->string('fax')->nullable();
         });
     }
 

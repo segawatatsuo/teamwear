@@ -16,9 +16,9 @@ class CreateOptionDetailsTable extends Migration
         Schema::create('option_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('option_id')->comment('オプションID');
-            $table->string('value')->comment('オプション値');
-            $table->string('price')->comment('オプション価格');
+            $table->string('option_id')->nullable()->comment('オプションID');
+            $table->string('value')->nullable()->comment('オプション値');
+            $table->string('price')->nullable()->comment('オプション価格');
         });
     }
 

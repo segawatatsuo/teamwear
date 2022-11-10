@@ -36,10 +36,30 @@ Route::get('password/admin/reset/{token}', 'Auth\AdminResetPasswordController@sh
 Route::post('password/admin/reset', 'Auth\AdminResetPasswordController@reset')->name('admin.password.update');
 
 
-Route::get('users/test/','TestController@index')->name('index');
-Route::get('admins/test/','AdminController@index')->name('index');
+Route::get('users/test/', 'TestController@index')->name('index');
+Route::get('admins/test/', 'AdminController@index')->name('index');
 
 
 Route::get('adminlte', function () {
     return view('adminlte');
 });
+
+Route::resource('products', 'ProductController');
+Route::resource('orders', 'OrderController');
+Route::resource('customers', 'CustomerController');
+Route::resource('mails', 'MailController');
+Route::resource('companies', 'CompanyController');
+Route::resource('categories', 'CategoryController');
+Route::resource('initials', 'InitialController');
+Route::resource('initials', 'InitialController');
+Route::resource('makers', 'MakerController');
+
+Route::resource('categorys', 'CategoryController');
+Route::resource('classifications', 'ClassificationController');
+Route::resource('genders', 'GenderController');
+Route::resource('ages', 'AgeController');
+Route::resource('pulldowns', 'PulldownMainController');
+
+
+Route::post('index', 'ImageController@index')->name('image.index');
+Route::post('upload', 'ImageController@upload')->name('upload');
