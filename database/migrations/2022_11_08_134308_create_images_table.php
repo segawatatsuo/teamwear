@@ -16,8 +16,9 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('name');
-            $table->string('path');
+            $table->string('product_id')->nullable()->comment('productとのリレーション用のID');
+            $table->string('name')->nullable()->comment('画像名');
+            $table->string('path')->nullable()->comment('画像のパス');
         });
     }
 

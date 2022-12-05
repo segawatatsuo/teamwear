@@ -12,6 +12,10 @@ use App\Models\Classification;
 use App\Models\Category;
 use App\Models\Image;
 
+use Session;
+
+use My_func;
+
 class ProductController extends Controller
 {
     /**
@@ -67,9 +71,12 @@ class ProductController extends Controller
         $product = new Product();
         //fillableで一致する全カラムを一括保存
         $product->fill($request->all())->save();
+        //今セーブしたid
+        $last_insert_id = $product->id;
+        $products = Product::find($last_insert_id);
 
-        $products = Product::paginate(8);
-        return redirect(route('products.index', compact('products')))->with('flash_message', '登録しました');
+        return redirect(route('products.index', compact('products')))->with('id', $last_insert_id)->with('flash_message', '登録しました');
+
     }
 
     /**
@@ -101,13 +108,10 @@ class ProductController extends Controller
         $pulldown_category=$category->pulldown();
 
         $products = Product::find($id);
+        //画像 リレーション元→リレーション先→条件
+        $images = $products->images->where('product_id', $id);
 
-        //Modelsで作ったメソッド名を入れる。
-        $images = Product::find($id)->images;
-
-
-
-        return view('products.show', compact('products', 'pulldown_age', 'pulldown_maker', 'pulldown_classification', 'pulldown_gender', 'pulldown_category','images'));
+        return view('products.show', compact('products', 'pulldown_age', 'pulldown_maker', 'pulldown_classification', 'pulldown_gender', 'pulldown_category', 'images'));//'images'
     }
 
     /**
@@ -118,7 +122,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $products = Product::find($id);
+        //return view("products.index", compact('products'));
+        return view('products.edit')->with('products', $products);
     }
 
     /**
@@ -132,7 +138,36 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->fill($request->all())->save();
-        return redirect(route('products.index'))->with('flash_message', '更新しました');
+
+        //ageモデルからプルダウンに使う値を取得
+        $age = new Age();
+        $pulldown_age=$age->pulldown();
+
+        //Makerモデルからプルダウンに使う値を取得
+        $maker = new Maker();
+        $pulldown_maker=$maker->pulldown();
+
+        //Classificationモデルからプルダウンに使う値を取得
+        $classification = new Classification();
+        $pulldown_classification=$classification->pulldown();
+
+        //Genderモデルからプルダウンに使う値を取得
+        $gender = new Gender();
+        $pulldown_gender=$gender->pulldown();
+
+        //Categoryモデルからプルダウンに使う値を取得
+        $category = new Category();
+        $pulldown_category=$category->pulldown();
+
+
+        $products = Product::find($id);
+        //画像 リレーション元→リレーション先→条件
+        $images = $products->images->where('product_id', $id);
+
+        //return view　の際の　with()は変数をセットするメソッドになるため別途セッションで作成する。return redirectのwith()はセッションを作成できる。
+        Session::flash('flash_message', '更新しました!');
+
+        return view('products.show', compact('products', 'pulldown_age', 'pulldown_maker', 'pulldown_classification', 'pulldown_gender', 'pulldown_category', 'images'));//'images'
     }
 
     /**
@@ -147,4 +182,6 @@ class ProductController extends Controller
         $product->delete();
         return redirect(route('products.index'))->with('flash_message', '削除しました');
     }
+
+
 }

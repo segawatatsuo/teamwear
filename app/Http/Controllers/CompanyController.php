@@ -15,6 +15,7 @@ class CompanyController extends Controller
     public function index()
     {
         $company = Company::first();
+
         return view("companies.index", compact('company'));
     }
 
@@ -68,9 +69,12 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, $id)
     {
-        //
+        $company = Company::find($id);
+        $company->fill($request->all())->save();
+        //dd($company->fill($request->all()));
+        return redirect(route('companies.index'))->with('flash_message', '更新しました');
     }
 
     /**
@@ -81,8 +85,8 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        $product = Company::find($id);
-        $product->delete();
+        $company = Company::find($id);
+        $company->delete();
         return redirect(route('companies.index'))->with('flash_message', '削除しました');
     }
 }

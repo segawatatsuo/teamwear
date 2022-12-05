@@ -12,7 +12,11 @@ class Company extends Model
         'address1',
         'address2',
         'tel_number',
+        'tel_number2',
         'fax_number',
+        'manager',
+        'low_notation',
+        'business_registration_number',
 
         'order_mail',
         'inquiry_mail',

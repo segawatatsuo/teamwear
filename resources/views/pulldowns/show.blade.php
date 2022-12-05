@@ -3,32 +3,22 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<section class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div>
-                    <h3 style="display: inline;vertical-align: middle;margin-right: 10px;">編集</h3>
-                    
-                    <a href="#" class="btn btn-secondary" onclick='window.history.back(-1);'>一覧に戻る</a>
 
-                    <form method="post" style="display: inline;">
-                        @csrf
-                        @method('DELETE')
-                    <button formaction="{{ route('ages.destroy',$age->id) }}" type="submit" class="btn btn-danger" onclick='return confirm("削除しますか？");'>削除</button>
-                    </form>
-                    
-                    <form method="post" action={{ route('ages.update',$age->id) }} style="display: inline;">
-                        @csrf
-                        @method('patch')
-                        <button type="submit" class="btn btn-primary">更新</button>
+    <form action="{{ route('pulldowns.store') }}" method="post">
+        @csrf
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 style="display: inline;vertical-align: middle;margin-right: 10px;">新規登録</h3>
+                        <input type="submit" value="  登 録  " class="btn btn-primary">
+                        <input type="reset" value="キャンセル" class="btn btn-secondary" onclick='window.history.back(-1);'>
+
+                    </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-</section>
-@stop
+        </section>
+    @stop
 
     @section('content')
 
@@ -36,16 +26,16 @@
         <div class="content">
             <div class="container-fluid">
 
-            <!-- エラー時のフラッシュメッセージ -->
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+                <!-- エラー時のフラッシュメッセージ -->
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 <div class="row">
                     <div class="col-lg-6">
@@ -53,26 +43,78 @@
 
 
                             <div class="card-header" style="background-color:#77B1A1">
-                                <h3 class="card-title">カテゴリー</h3>
+                                <h3 class="card-title">プルダウン</h3>
                             </div>
-                            
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="category">名称</label>
-                                    <input type="text" value="{{ $age->content }}"
-                                        class="form-control" id="content" name="content" style="width:100%">
-                                </div>
 
-                           </div>
-                            <!-- /.card-body -->
-                    </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /.col-md-6 -->
-            </div>
-        </div>
-        <!-- /.row -->
+
+
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="category">名称</label>
+
+                                        <input type="text" value="" class="form-control" id="content"
+                                            name="content" style="width:100%">
+
+                                        <table id="table_edit" class="table table-bordered" style="margin-top:10px;">
+                                            <tr>
+                                                <th>値</th>
+                                                <th>単価</th>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+
+                                </div>
+                                <!-- /.card-body -->
+
+                        </div>
+    </form>
+    </div>
+    </div>
+    <!-- /.col-md-6 -->
+    </div>
+    </div>
+    <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
     </div>

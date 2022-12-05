@@ -441,9 +441,9 @@ return [
 
         [
             //'text'       => 'information',
-            'text'       => '基本設定',
+            'text'       => '特定商取引',
             'icon_color' => 'cyan',
-            'url'        => 'initials',
+            'url'        => 'law',
         ],
 
 

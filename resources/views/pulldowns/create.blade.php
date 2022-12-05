@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-    <form action="{{ route('ages.store') }}" method="post">
+    <form action="{{ route('pulldowns.store') }}" method="post">
         @csrf
         <section class="content">
             <div class="container-fluid">
@@ -26,16 +26,16 @@
         <div class="content">
             <div class="container-fluid">
 
-            <!-- エラー時のフラッシュメッセージ -->
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+                <!-- エラー時のフラッシュメッセージ -->
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
                 <div class="row">
                     <div class="col-lg-6">
@@ -45,45 +45,76 @@
                             <div class="card-header" style="background-color:#77B1A1">
                                 <h3 class="card-title">プルダウン</h3>
                             </div>
-                            
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="category">名称</label>
-                                    <input type="text" value=""
-                                        class="form-control" id="content" name="content" style="width:100%">
 
 
-                                        <label for="category">種類</label>
-                                        <select name="prefecture" class="form-control" id="content" name="content" style="width:100%">
-                                            <option value="">選択してください</option>
-                                            <option value="色指定">色指定</option>
-                                            <option value="">価格無し</option>
-                                            <option value="">価格有り</option>
-                                            <option value=""></option>
-                                            </select>
 
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="category">名称</label>
+
+                                        <input type="text" value="" class="form-control" id="content"
+                                            name="content" style="width:100%">
 
                                         <table id="table_edit" class="table table-bordered" style="margin-top:10px;">
-                                            <tr><th>値</th><th>RGB</th><th>単価</th></tr>
-                                            <tr><td contenteditable></td><td contenteditable></td><td contenteditable></td></tr>
-                                            <tr><td contenteditable></td><td contenteditable></td><td contenteditable></td></tr>
-                                            <tr><td contenteditable></td><td contenteditable></td><td contenteditable></td></tr>
-                                            <tr><td contenteditable></td><td contenteditable></td><td contenteditable></td></tr>
-                                            <tr><td contenteditable></td><td contenteditable></td><td contenteditable></td></tr>
+                                            <tr>
+                                                <th>値</th>
+                                                <th>単価</th>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                                <td><input class="form-control" id="ex1" type="text"></td>
+                                            </tr>
 
                                         </table>
-                                </div>
+                                    </div>
 
-                           </div>
-                            <!-- /.card-body -->
-                    </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /.col-md-6 -->
-            </div>
-        </div>
-        <!-- /.row -->
+                                </div>
+                                <!-- /.card-body -->
+
+                        </div>
+    </form>
+    </div>
+    </div>
+    <!-- /.col-md-6 -->
+    </div>
+    </div>
+    <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
     </div>

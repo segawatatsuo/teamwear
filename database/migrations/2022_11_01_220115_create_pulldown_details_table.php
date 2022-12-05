@@ -16,6 +16,7 @@ class CreatePulldownDetailsTable extends Migration
         Schema::create('pulldown_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->integer('pulldownmain_id')->nullable()->comment('リレーション');
             $table->string('price')->nullable()->comment('data-price');
             $table->string('value')->nullable()->comment('値');
             $table->string('conditions')->nullable()->comment('抽出条件');

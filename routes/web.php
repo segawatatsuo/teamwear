@@ -11,8 +11,12 @@
 |
 */
 
+//use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return view('shop.index');
 });
 
 Auth::routes();
@@ -53,13 +57,13 @@ Route::resource('categories', 'CategoryController');
 Route::resource('initials', 'InitialController');
 Route::resource('initials', 'InitialController');
 Route::resource('makers', 'MakerController');
+Route::resource('law', 'LawController');
 
 Route::resource('categorys', 'CategoryController');
 Route::resource('classifications', 'ClassificationController');
 Route::resource('genders', 'GenderController');
 Route::resource('ages', 'AgeController');
 Route::resource('pulldowns', 'PulldownMainController');
-
 
 Route::post('index', 'ImageController@index')->name('image.index');
 Route::post('upload', 'ImageController@upload')->name('upload');

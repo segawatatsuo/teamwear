@@ -36,6 +36,9 @@ class CreateProductsTable extends Migration
             $table->integer('cprice')->nullable()->comment('通常価格');
             $table->integer('skuunit')->nullable()->comment('単位（枚・着）');
             $table->integer('price')->nullable()->comment('販売価格');
+
+            $table->integer('purchase_price')->nullable()->comment('仕入れ価格');
+
             $table->integer('zaikonum')->nullable()->comment('在庫数');
             $table->string('zaiko')->nullable()->comment('');
 

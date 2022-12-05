@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PulldownMain;
+use App\Models\PulldownDetail;
 use Illuminate\Http\Request;
 
 class PulldownMainController extends Controller
@@ -36,7 +37,9 @@ class PulldownMainController extends Controller
      */
     public function store(Request $request)
     {
-        return redirect(route('pulldowns.index', compact('pulldown')))->with('flash_message', '登録しました');
+        $name=$request->input('content');
+        $PulldownMain = PulldownMain::create(['name' => $name]);
+        return redirect(route('pulldowns.index'))->with('flash_message', '登録しました');
     }
 
     /**
@@ -47,7 +50,8 @@ class PulldownMainController extends Controller
      */
     public function show($id)
     {
-        return view('pulldowns.show', );
+        $pulldown = PulldownMain::find($id);
+        return view('pulldowns.show',compact('pulldown') );
     }
 
     /**

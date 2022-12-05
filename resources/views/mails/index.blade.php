@@ -27,14 +27,14 @@
                         </div>
                     @endif
 
-
+                    <div class="card card-success">
                     <!-- /.card-header -->
                     <div class="card-body">
 
                         <form method="post">
                             @csrf
 
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <div class="card card-primary card-outline">
                                     <div class="card-header">
                                         <h3 class="card-title">ご注文ありがとうございましたメール</h3>
@@ -43,20 +43,16 @@
                                     <div class="card-body">
 
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="Subject:">
+                                            <input class="form-control" placeholder="Subject:" name="thankyou_title">
                                         </div>
 
+                                        <div class="form-group">
+                                            <textarea id="thankyou_header" name="thankyou_header" class="form-control" placeholder="body:"></textarea>
+                                        </div>
 
-
-
-
-
-
-
-
-
-
-                                        
+                                        <div class="form-group">
+                                            <textarea id="thankyou_footer" name="thankyou_footer" class="form-control" placeholder="footer:"></textarea>
+                                        </div>                                    
 
 
                                         <div class="card-footer">
@@ -73,6 +69,7 @@
                             </div>
 
                         </form>
+                    </div>
                     </div>
                     
                 </div>

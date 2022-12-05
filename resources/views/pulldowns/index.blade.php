@@ -64,7 +64,7 @@
                                             <tr>
                                                 <td><a href="{{route('pulldowns.show', $pulldown->id)}} ">{{ $pulldown->id }}</a></td>
                                                 <td>{{ $pulldown->created_at }}</td>
-                                                <td>{{ $pulldown->content }}</td>
+                                                <td>{{ $pulldown->name }}</td>
 
                                            </tr>
                                         @endforeach
