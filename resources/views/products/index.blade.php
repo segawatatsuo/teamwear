@@ -15,8 +15,6 @@
 
                         <a class="btn btn-info" href="{{ route('products.create') }}">新規商品登録</a>
 
-                        <input formaction="{{ 'products.front_update' }}" type="submit" class="btn btn-primary"
-                            value="更新">
 
                     </div>
                 </div>
@@ -82,6 +80,7 @@
                                                 <td>{{ $product->category }}</td>
                                                 <td>{{ $product->classification }}</td>
                                                 <td>{{ $product->genre }}</td>
+                                                <td></td>
                                             </tr>
                                         @endforeach
                                     </tbody>

@@ -13,7 +13,7 @@ class PulldownDetail extends Model
         'pulldown_mains_id',
     ];
 
-    public function pulldown_main()
+    public function PulldownMain()
     {
         return $this->belongsTo('App\Models\PulldownMain');
     }

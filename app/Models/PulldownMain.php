@@ -12,7 +12,7 @@ class PulldownMain extends Model
         'conditions'
     ];
 
-    public function pulldown_details()
+    public function PulldownDetails()
     {
         return $this->hasMany('App\Models\PulldownMain');
     }

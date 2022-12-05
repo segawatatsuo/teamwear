@@ -10,7 +10,9 @@
                     <div>
                         <h3 style="display: inline;vertical-align: middle;margin-right: 10px;">編集</h3>
 
-                        <a href="#" class="btn btn-secondary" onclick='window.history.back(-1);'>一覧に戻る</a>
+                        <a href="#" class="btn btn-secondary" onclick='window.history.back(-1);'>一覧に戻る</a> 
+
+
 
                         <form method="post" style="display: inline;">
                             @csrf

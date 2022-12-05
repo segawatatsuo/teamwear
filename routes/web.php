@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('shop.index');
 });
 
+Route::get('/single', function () {
+    //return view('welcome');
+    return view('shop.single');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

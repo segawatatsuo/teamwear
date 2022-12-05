@@ -50,7 +50,8 @@ class PulldownMainController extends Controller
      */
     public function show($id)
     {
-        $pulldown = PulldownMain::find($id);
+        $pulldown = PulldownMain::find($id)->PulldownDetails();
+        
         return view('pulldowns.show',compact('pulldown') );
     }
 

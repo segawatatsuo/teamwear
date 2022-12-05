@@ -53,7 +53,8 @@
                                         <label for="category">名称</label>
 
                                         <input type="text" value="" class="form-control" id="content"
-                                            name="content" style="width:100%">
+                                            name="content" style="width:100%" value="">
+
 
                                         <table id="table_edit" class="table table-bordered" style="margin-top:10px;">
                                             <tr>
