@@ -242,28 +242,25 @@
 
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="Customer">シャツカラー</label>
-                                <input type="text" name="" id="" class="form-control" value=""
-                                    style="width:15%">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="Customer">チーム名カラー</label>
-                                <input type="text" name="" id="" class="form-control" value=""
-                                    style="width:15%">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="Customer">チーム名書体ボタン</label>
-                                <input type="text" name="" id="" class="form-control" value=""
-                                    style="width:15%">
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="Customer">サイズ</label>
-                                <input type="text" name="" id="" class="form-control" value=""
-                                    style="width:15%">
+                                <ul class="jquery-ui-sortable">
+                                    <li class="ui-state-default border-color-red">項目 1-1</li>
+                                    <li class="ui-state-default border-color-red">項目 1-2</li>
+                                    <li class="ui-state-default border-color-red">項目 1-3</li>
+                                    <li class="ui-state-default border-color-red">項目 1-4</li>
+                                    <li class="ui-state-default border-color-red">項目 1-5</li>
+                                    <li class="ui-state-default border-color-red">項目 1-6</li>
+                                    <li class="ui-state-default border-color-red">項目 1-7</li>
+                                </ul>
+                                <ul class="jquery-ui-sortable">
+                                    <li class="ui-state-default border-color-blue">項目 2-1</li>
+                                    <li class="ui-state-default border-color-blue">項目 2-2</li>
+                                    <li class="ui-state-default border-color-blue">項目 2-3</li>
+                                    <li class="ui-state-default border-color-blue">項目 2-4</li>
+                                    <li class="ui-state-default border-color-blue">項目 2-5</li>
+                                    <li class="ui-state-default border-color-blue">項目 2-6</li>
+                                    <li class="ui-state-default border-color-blue">項目 2-7</li>
+                                </ul>
+                                <div style="clear: both;"></div>
                             </div>
                         </div>
                     </div>
@@ -277,12 +274,15 @@
                             <h3 class="card-title">画像</h3>
                         </div>
                         <div class="card-body">
+                            <div class="form-group">
                             <form method="POST" action="{{ route('upload') }}" enctype="multipart/form-data">
                                 @csrf
                                 <input type="file" name="image">
                                 <button>アップロード</button>
                                 <input type="hidden" name="products_id" value="{{ $products->id }}">
+                                <hr>
                             </form>
+                            
                         </div>
                         <!--画像があれば-->
                         @if (count($images) > 0)
@@ -290,6 +290,7 @@
                                 <img src="{{ url($img->path) }}" width="25%">
                             @endforeach
                         @endif
+                    </div>
 
                     </div>
 
@@ -315,7 +316,20 @@
 @stop
 
 @section('js')
-    <script>
-        console.log('Hi!');
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- jQuery UI -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<script>
+    <!--
+    $( function() {
+        $( '.jquery-ui-sortable' ) . sortable( {
+            connectWith: '.jquery-ui-sortable'
+        } );
+        $( '.jquery-ui-sortable' ) . disableSelection();
+    } );
+    // -->
     </script>
 @stop
